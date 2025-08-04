@@ -1572,27 +1572,22 @@ from code_unit_generator import CodeUnitGenerator
 
 ---
 
-📊 Roadmap
-
-Chaos engine module (reserved for future release)
-
-Full test suite and benchmark tools
-
-CLI wrapper and plug-and-play deployment
-
-More advanced AI integration logic (👀 hush hush)
-
-
-
----
 
 🛡️ License
 
-To be defined.
-Use by Meta or associated subsidiaries is explicitly prohibited.
+​🔒 Intellectual Property Notice
 
-For licensing or integration: contact the developer. Royalties? Maybe.
-Peace of mind? Not included.
+All code, structure, and content displayed on this page are part of a proprietary system currently under development or protection.
+
+🛑 This is a visual demonstration only.Reuse, modification, reproduction, or redistribution of any part of this system (including its architecture, code snippets, or diagrams) is explicitly prohibited without written authorization.
+
+By viewing this content, you acknowledge:
+
+-It is presented for reference only
+
+-It remains intellectual property of the author
+
+-It may not be reverse-engineered, extracted, or implemented© All rights reserved. Patent pending.
 
 
 ---
@@ -1600,7 +1595,7 @@ Peace of mind? Not included.
 💬 Final Note
 
 You're not supposed to fully understand these at first glance. That’s the point.
-They're modular, scalable, and slightly smarter than your cousin who still says "blockchain" in 2025.
+They're modular, scalable, and redacted.
 
 
 ---
