@@ -23,7 +23,6 @@
 
 
 ## 🧩 Modular System Architecture (Anonymized Technical Showcase)  
-━━━━━━━━━━━━━━━━━━━━━━━━━━
 
  This page presents a software architecture designed for complex, constraint-aware, modular applications.
 No functionality, project, or proprietary domain is disclosed.
@@ -45,7 +44,8 @@ No functionality, project, or proprietary domain is disclosed.
 
 ---
 
-#### ⚙️ Design Goals
+#### ⚙️ Design Goals  
+━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 - Clear separation of responsibilities
 
