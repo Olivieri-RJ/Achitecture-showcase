@@ -5,7 +5,7 @@
 
 ## 🧩 Modular System Architecture (Anonymized Technical Showcase)
 
-This page presents a software architecture designed for complex, constraint-aware, modular applications.
+### This page presents a software architecture designed for complex, constraint-aware, modular applications.
 No functionality, project, or proprietary domain is disclosed.
 (This is a structural demonstration only.)
 
