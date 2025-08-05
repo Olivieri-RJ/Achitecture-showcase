@@ -3,6 +3,23 @@
 [Click to see developer's portfolio](https://andersonolivieri.carrd.co/)
 
 
+## 🗂️ Table of Contents
+
+- [🧩 Modular System Architecture](#-modular-system-architecture-anonymized-technical-showcase)
+- [🔧 Components Overview](#-components-overview)
+- [⚙️ Design Goals](#-design-goals)
+- [🧠 Abstracted Logic Flow](#-abstracted-logic-flow)
+- [🧱 Code Architecture Vault](#-code-architecture-vault)
+- [📦 Sample Modules](#-sample-modules)  
+  - [🔒 securitycore.py](#-sample-securitycorepy)
+  - [🕹️ adaptation_engine.py](#-sample-adaptation_enginepy)
+  - [🤖 codeunitgenerator.py](#-sample-codeunitgeneratorpy)
+- [📊 System Schematics](#-system-schematics)
+- [📄 Architectural Notes](#-architectural-notes)
+- [🔒 Intellectual Property Notice](#-intellectual-property-notice)
+- [📞 Contact](#-contact)
+
+
 ## 🧩 Modular System Architecture (Anonymized Technical Showcase)
 
  This page presents a software architecture designed for complex, constraint-aware, modular applications.
