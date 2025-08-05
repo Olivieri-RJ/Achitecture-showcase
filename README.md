@@ -32,7 +32,7 @@ No functionality, project, or proprietary domain is disclosed.
 
 
 #### 🔧 Components Overview
-─────────────────────
+────────────────────
 
 - ControlCore: central logic router
 
@@ -46,7 +46,8 @@ No functionality, project, or proprietary domain is disclosed.
 
 
 
-#### ⚙️ Design Goals  
+#### ⚙️ Design Goals
+────────────────────
 
 - Clear separation of responsibilities
 
@@ -61,12 +62,14 @@ No functionality, project, or proprietary domain is disclosed.
 
 
 #### 🧠 Abstracted Logic Flow
+────────────────────
 
 ![Descrição da imagem](assets/20250805_133007.png)
 
 
 
 #### 🧱 Code Architecture Vault
+────────────────────
 
 Modular logic units for advanced systems.
 
@@ -1315,6 +1318,7 @@ if __name__ == "__main__":
 
 
 #### 📊 System Schematics
+────────────────────
 
 Below are abstracted structural schematics extracted from the project’s architecture, 3 diagrams representing:
 
@@ -1333,6 +1337,7 @@ logicDecision-making flow
 
 
 #### 📄 Architectural Notes
+────────────────────
 
 This system emphasizes modularity, integrity, and scalability under resource constraints. 
 It's adaptable across multiple environments and scenarios without relying on cloud, APIs, or external services. 
@@ -1341,6 +1346,7 @@ All logic presented is abstracted — the original system’s purpose is deliber
 
 
 #### 🔒 Intellectual Property Notice
+────────────────────
 
 This project, including all code, design, structural logic, naming conventions, and internal flow, is the exclusive intellectual property of the author.
 
@@ -1365,6 +1371,7 @@ By viewing this content, you acknowledge:
 
 
 #### 📞 Contact
+────────────────────
 
 Interested in applying this style of architecture to your own system? Send a message.
 
@@ -1375,3 +1382,4 @@ Anderson Olivieri
 📧 Email: codec.rj.2012@gmail.com
 
 #### 🧩 Available for technical projects, collaborations, and on-demand logic.
+────────────────────
