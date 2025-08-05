@@ -1,5 +1,7 @@
 # Modular Architecture Showcase (Anonymized)
 
+---
+
 [Click to see developer's portfolio](https://andersonolivieri.carrd.co/)
 
 
