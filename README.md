@@ -13,17 +13,26 @@ No functionality, project, or proprietary domain is disclosed.
 🔧 Components Overview
 
 - ControlCore: central logic router
+
 - SecurityCore: handles rules and internal enforcement
+
 - AdaptationEngine: adjusts outputs based on dynamic parameters
+
 - CodeUnitGenerator: builds executable logic units + tests
+
 - IOhub: manages interface layers (abstracted)
 
 
 ⚙️ Design Goals
+
 - Clear separation of responsibilities
+
 - Rule-based override validation system
+
 - Low-resource compatibility (offline-friendly)
+
 - Runtime adaptation logic
+
 - Executable output generation with validation included
 
 
@@ -33,7 +42,9 @@ No functionality, project, or proprietary domain is disclosed.
 
 
 🧱 Code Architecture Vault
+
 Modular logic units for advanced systems.
+
 Below are modular logic units engineered for real-world adaptability, performance validation, and scalable architecture. Their target system: classified.
 
 
@@ -1271,14 +1282,21 @@ if __name__ == "__main__":
 
 
 📊 System Schematics
+
 Below are abstracted structural schematics extracted from the project’s architecture, 3 diagrams representing:
+
 Modular interaction
+
 Permission tree 
+
 logicDecision-making flow
 
 
 📄 Architectural Notes
-This system emphasizes modularity, integrity, and scalability under resource constraints. It's adaptable across multiple environments and scenarios without relying on cloud, APIs, or external services. All logic presented is abstracted — the original system’s purpose is deliberately withheld.
+
+This system emphasizes modularity, integrity, and scalability under resource constraints. 
+It's adaptable across multiple environments and scenarios without relying on cloud, APIs, or external services. 
+All logic presented is abstracted — the original system’s purpose is deliberately withheld.
 
 
 🔒 Intellectual Property Notice
@@ -1286,6 +1304,7 @@ This system emphasizes modularity, integrity, and scalability under resource con
 All code, structure, and content displayed on this page are part of a proprietary system currently under development or protection.
 
 🛑 This is a visual demonstration only. Reuse, modification, reproduction, or redistribution of any part of this system (including its architecture, code snippets, or diagrams) is explicitly prohibited without written authorization.
+
 By viewing this content, you acknowledge:  
 
 -It is presented for reference only
@@ -1298,7 +1317,11 @@ By viewing this content, you acknowledge:
 📞 Contact
 
 Interested in applying this style of architecture to your own system? Send a message.
+
 Anderson Olivieri 
-📱 WhatsApp / Telegram: +55 21 97139‑7191📧 Email: codec.rj.2012@gmail.com
+
+📱 WhatsApp / Telegram: +55 21 97139‑7191
+
+📧 Email: codec.rj.2012@gmail.com
 
 🧩 Available for technical projects, collaborations, and on-demand logic.
