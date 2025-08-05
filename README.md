@@ -1298,7 +1298,7 @@ Permission tree
 
 logicDecision-making flow
 
-![Descrição da imagem](assets/file_0000000091ac61f893fb18281f03325f.png
+![Descrição da imagem](assets/file_0000000091ac61f893fb18281f03325f.png)
 
 
 📄 Architectural Notes
