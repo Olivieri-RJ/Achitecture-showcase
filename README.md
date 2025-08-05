@@ -1382,4 +1382,3 @@ Anderson Olivieri
 📧 Email: codec.rj.2012@gmail.com
 
 #### 🧩 Available for technical projects, collaborations, and on-demand logic.
-────────────────────
