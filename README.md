@@ -1294,7 +1294,7 @@ Modular interaction
 
 Permission tree 
 
-
+![Descrição da imagem](assets/file_00000000da5861f88216dab9e451afbd.png)
 
 logicDecision-making flow
 
