@@ -32,7 +32,7 @@ No functionality, project, or proprietary domain is disclosed.
 
 
 #### 🔧 Components Overview
-────────────────────────
+────────────────────
 
 - ControlCore: central logic router
 
