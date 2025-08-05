@@ -19,6 +19,8 @@
 - [🔒 Intellectual Property Notice](#-intellectual-property-notice)
 - [📞 Contact](#-contact)
 
+> 🚧 *This architecture is under R&D. Code is illustrative, not deployable.*
+
 
 ## 🧩 Modular System Architecture (Anonymized Technical Showcase)
 
