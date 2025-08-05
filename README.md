@@ -40,6 +40,7 @@ No functionality, project, or proprietary domain is disclosed.
 
 +-------------+ +----------------+| User Input | -----> | ControlCore |+-------------+ +----------------+|+-----------+ +----------------+ +------------------+| Security | | Adaptation | | Code Generator || Core | | Engine | | Unit |+-----------+ +----------------+ +------------------+|[Output Router]
 
+![](https://github.com/Olivieri-RJ/Architecture-showcase/raw/main/images/20250805_133007.png)
 
 🧱 Code Architecture Vault
 
