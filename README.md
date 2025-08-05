@@ -49,7 +49,6 @@ Below are modular logic units engineered for real-world adaptability, performanc
 
 
 🔒 Sample: securitycore.py
-
 ```python
 #!/usr/bin/env python3
 """
@@ -634,7 +633,6 @@ if __name__ == "__main__":
 ```
 
 🕹️ Sample: adaptation_engine.py
-
 ```python
 #!/usr/bin/env python3
 """
@@ -908,7 +906,6 @@ if __name__ == "__main__":
 
 
 🤖 Sample: codeunitgenerator.py
-
 ```python
 #!/usr/bin/env python3
 """
