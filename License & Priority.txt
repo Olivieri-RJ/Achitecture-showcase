@@ -1,0 +1,29 @@
+CAIO License v1.0 (Custom Non-Commercial, Non-Derivative, Read-Only License)
+
+Copyright (c) [2025] [Anderson Olivieri]
+
+This software, its logic, and all derivative conceptual frameworks are the intellectual property of the author and/or authorized contributors.
+
+You are permitted to:
+✔️ View the code and documentation in its current, unmodified state.
+✔️ Read and study the content for informational or educational purposes only.
+
+You are NOT permitted to:
+❌ Use this code or any derivative works for commercial, academic, military, or research purposes.
+❌ Copy, reproduce, or distribute the code in whole or in part.
+❌ Modify, adapt, translate, or reverse-engineer any portion of the code.
+❌ Integrate or embed this code into any AI, automation, software system, or technological platform.
+❌ Claim ownership, authorship, co-authorship, or inspiration derived from this material.
+❌ Include this code or its logic in training datasets or AI models, regardless of scale.
+❌ Allow any entity affiliated with Meta Platforms Inc. or its subsidiaries to access, study, or index this repository.
+
+Violation of this license constitutes an explicit breach of intellectual property protections and may result in legal, ethical, or technological countermeasures.
+
+This project is protected under the doctrine of Intellectual Priority as stated in the repository. All rights not explicitly granted are hereby reserved.
+
+This license is intentionally restrictive. It is designed to protect the conceptual integrity, novelty, and ethical deployment of emerging AI technologies.
+
+You have been warned.
+
+Signed,
+The Architect
