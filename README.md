@@ -1321,7 +1321,7 @@ All logic presented is abstracted — the original system’s purpose is deliber
 
 #### 🔒 Intellectual Property Notice
 
-All code, structure, and content displayed on this page are part of a proprietary system currently under development or protection.
+All code, structure, and content displayed on this page are part of a proprietary system currently under development or protection (see License & Priority text file).
 
 🛑 This is a visual demonstration only. Reuse, modification, reproduction, or redistribution of any part of this system (including its architecture, code snippets, or diagrams) is explicitly prohibited without written authorization.
 
@@ -1331,7 +1331,9 @@ By viewing this content, you acknowledge:
 
 -It remains intellectual property of the author
 
--It may not be reverse-engineered, extracted, or implemented© All rights reserved. Patent pending.
+-It may not be reverse-engineered, extracted, or implemented.
+
+© All rights reserved. Patent pending.
 
 ---
 
