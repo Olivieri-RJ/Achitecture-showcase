@@ -21,7 +21,7 @@
 
 > 🚧 *This architecture is part of an ongoing R&D process. Code and logic are illustrative, non-deployable, and covered under a pending patent.*
 
----
+
 
 ## 🧩 Modular System Architecture (Anonymized Technical Showcase)  
 
@@ -29,7 +29,7 @@
 No functionality, project, or proprietary domain is disclosed.
 (This is a structural demonstration only.)
 
----
+
 
 #### 🔧 Components Overview
 
@@ -43,7 +43,7 @@ No functionality, project, or proprietary domain is disclosed.
 
 - IOhub: manages interface layers (abstracted)
 
----
+
 
 #### ⚙️ Design Goals  
 
@@ -57,13 +57,13 @@ No functionality, project, or proprietary domain is disclosed.
 
 - Executable output generation with validation included
 
----
+
 
 #### 🧠 Abstracted Logic Flow
 
 ![Descrição da imagem](assets/20250805_133007.png)
 
----
+
 
 #### 🧱 Code Architecture Vault
 
@@ -1311,7 +1311,7 @@ if __name__ == "__main__":
     print(f"\n✅ CodeUnitGenerator ready for intelligent code creation!")
 ```
 
----
+
 
 #### 📊 System Schematics
 
@@ -1329,7 +1329,7 @@ logicDecision-making flow
 
 ![Descrição da imagem](assets/file_0000000091ac61f893fb18281f03325f.png)
 
----
+
 
 #### 📄 Architectural Notes
 
@@ -1337,7 +1337,7 @@ This system emphasizes modularity, integrity, and scalability under resource con
 It's adaptable across multiple environments and scenarios without relying on cloud, APIs, or external services. 
 All logic presented is abstracted — the original system’s purpose is deliberately withheld.
 
----
+
 
 #### 🔒 Intellectual Property Notice
 
@@ -1361,7 +1361,7 @@ By viewing this content, you acknowledge:
 
 © All rights reserved. Patent pending.
 
----
+
 
 #### 📞 Contact
 
