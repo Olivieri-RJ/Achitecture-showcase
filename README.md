@@ -1,6 +1,6 @@
 # Modular Architecture Showcase (Anonymized)
 
-[Click to see developer's portfolio](https://andersonolivieri.carrd.co/)
+[![Visual Showcase](https://img.shields.io/badge/Visual%20Showcase-Carrd-blue)](https://andersonolivieri-project.carrd.co)
 
 
 ## 🗂️ Table of Contents
