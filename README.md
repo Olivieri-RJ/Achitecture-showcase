@@ -19,7 +19,7 @@
 - [🔒 Intellectual Property Notice](#-intellectual-property-notice)
 - [📞 Contact](#-contact)
 
-> 🚧 *This architecture is under R&D. Code is illustrative, not deployable.*
+> 🚧 *This architecture is part of an ongoing R&D process. Code and logic are illustrative, non-deployable, and covered under a pending patent.*
 
 
 ## 🧩 Modular System Architecture (Anonymized Technical Showcase)
