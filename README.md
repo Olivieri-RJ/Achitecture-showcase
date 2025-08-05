@@ -1290,7 +1290,10 @@ Below are abstracted structural schematics extracted from the project’s archit
 
 Modular interaction
 
+![Descrição da imagem](assets/file_00000000866461f7b62395ecefe7f8d0.png)
+
 Permission tree 
+
 
 logicDecision-making flow
 
