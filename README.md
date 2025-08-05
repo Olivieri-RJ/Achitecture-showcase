@@ -38,8 +38,6 @@ No functionality, project, or proprietary domain is disclosed.
 
 🧠 Abstracted Logic Flow
 
-+-------------+ +----------------+| User Input | -----> | ControlCore |+-------------+ +----------------+|+-----------+ +----------------+ +------------------+| Security | | Adaptation | | Code Generator || Core | | Engine | | Unit |+-----------+ +----------------+ +------------------+|[Output Router]
-
 ![Descrição da imagem](assets/20250805_133007.png)
 
 🧱 Code Architecture Vault
