@@ -21,6 +21,7 @@
 
 > 🚧 *This architecture is part of an ongoing R&D process. Code and logic are illustrative, non-deployable, and covered under a pending patent.*
 
+---
 
 ## 🧩 Modular System Architecture (Anonymized Technical Showcase)  
 
@@ -45,7 +46,6 @@ No functionality, project, or proprietary domain is disclosed.
 ---
 
 #### ⚙️ Design Goals  
-━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 - Clear separation of responsibilities
 
