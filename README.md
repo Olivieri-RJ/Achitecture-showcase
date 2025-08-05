@@ -50,6 +50,7 @@ Below are modular logic units engineered for real-world adaptability, performanc
 
 🔒 Sample: securitycore.py
 
+```python
 #!/usr/bin/env python3
 """
 Enhanced SecurityCore System
@@ -630,7 +631,7 @@ if __name__ == "__main__":
     print(json.dumps(report, indent=2))
     
     print("\n🎯 Security system ready for production!")
-
+```
 
 🕹️ Sample: adaptation_engine.py
 
