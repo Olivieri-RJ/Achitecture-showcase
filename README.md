@@ -635,6 +635,7 @@ if __name__ == "__main__":
 
 🕹️ Sample: adaptation_engine.py
 
+```python
 #!/usr/bin/env python3
 """
 AdaptationEngine - Smart Context Evaluation System
@@ -903,9 +904,13 @@ if __name__ == "__main__":
     for result in results:
         print(f"User {result['user_id']}: {result['level']}")
     
-    print(f"\n✅ AdaptationEngine ready for intelligent content adaptation!")                                                    
+    print(f"\n✅ AdaptationEngine ready for intelligent content adaptation!")     
+    ```
+
+
 🤖 Sample: codeunitgenerator.py
 
+```python
 #!/usr/bin/env python3
 """
 CodeUnitGenerator - Smart Code Generation System
@@ -1283,7 +1288,7 @@ if __name__ == "__main__":
     print(f"Most used type: {stats['most_used_type']}")
     
     print(f"\n✅ CodeUnitGenerator ready for intelligent code creation!")
-
+```
 
 📊 System Schematics
 
