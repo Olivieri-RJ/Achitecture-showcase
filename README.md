@@ -902,11 +902,11 @@ if __name__ == "__main__":
     for result in results:
         print(f"User {result['user_id']}: {result['level']}")
     
-    print(f"\n✅ AdaptationEngine ready for intelligent content adaptation!")        ```
+    print(f"\n✅ AdaptationEngine ready for intelligent content adaptation!")
+```
 
 
 🤖 Sample: codeunitgenerator.py
-
 ```python
 #!/usr/bin/env python3
 """
