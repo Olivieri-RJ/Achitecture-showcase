@@ -1321,7 +1321,13 @@ All logic presented is abstracted — the original system’s purpose is deliber
 
 #### 🔒 Intellectual Property Notice
 
-All code, structure, and content displayed on this page are part of a proprietary system currently under development or protection (see License & Priority text file).
+This project, including all code, design, structural logic, naming conventions, and internal flow, is the exclusive intellectual property of the author.
+
+Copying, redistributing, modifying, integrating, or using any part of this repository in personal or commercial projects — with or without changes — is strictly prohibited.
+
+Use of this material without prior written authorization is a violation and may result in legal action.
+
+Access to this repository ≠ permission to use (see License & Priority text file).
 
 🛑 This is a visual demonstration only. Reuse, modification, reproduction, or redistribution of any part of this system (including its architecture, code snippets, or diagrams) is explicitly prohibited without written authorization.
 
