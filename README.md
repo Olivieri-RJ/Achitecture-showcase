@@ -9,6 +9,7 @@ This page presents a software architecture designed for complex, constraint-awar
 No functionality, project, or proprietary domain is disclosed.
 (This is a structural demonstration only.)
 
+---
 
 🔧 Components Overview
 
@@ -22,6 +23,7 @@ No functionality, project, or proprietary domain is disclosed.
 
 - IOhub: manages interface layers (abstracted)
 
+---
 
 ⚙️ Design Goals
 
