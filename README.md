@@ -22,7 +22,8 @@
 > 🚧 *This architecture is part of an ongoing R&D process. Code and logic are illustrative, non-deployable, and covered under a pending patent.*
 
 
-## 🧩 Modular System Architecture (Anonymized Technical Showcase)
+## 🧩 Modular System Architecture (Anonymized Technical Showcase)  
+━━━━━━━━━━━━━━━━━━━━━━━━━━
 
  This page presents a software architecture designed for complex, constraint-aware, modular applications.
 No functionality, project, or proprietary domain is disclosed.
