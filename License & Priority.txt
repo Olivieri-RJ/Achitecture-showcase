@@ -1,29 +1,51 @@
-CAIO License v1.0 (Custom Non-Commercial, Non-Derivative, Read-Only License)
+# ICARUS License v2.0
 
-Copyright (c) [2025] [Anderson Olivieri]
+**Custom Non-Commercial, Non-Derivative, Portfolio-Only License**
 
-This software, its logic, and all derivative conceptual frameworks are the intellectual property of the author and/or authorized contributors.
+**Copyright © 2025 Anderson Felippo Peronchen Olivieri**
 
-You are permitted to:
-✔️ View the code and documentation in its current, unmodified state.
-✔️ Read and study the content for informational or educational purposes only.
+## Overview
 
-You are NOT permitted to:
-❌ Use this code or any derivative works for commercial, academic, military, or research purposes.
-❌ Copy, reproduce, or distribute the code in whole or in part.
-❌ Modify, adapt, translate, or reverse-engineer any portion of the code.
-❌ Integrate or embed this code into any AI, automation, software system, or technological platform.
-❌ Claim ownership, authorship, co-authorship, or inspiration derived from this material.
-❌ Include this code or its logic in training datasets or AI models, regardless of scale.
-❌ Allow any entity affiliated with Meta Platforms Inc. or its subsidiaries to access, study, or index this repository.
+All software, code samples, diagrams, system architectures, conceptual frameworks, and derivative works (collectively, the **"Materials"**) in this repository are the intellectual property of **Anderson Felippo Peronchen Olivieri** and/or authorized contributors. These Materials are anonymized excerpts derived from proprietary projects under **patent-pending protection (INPI, Brazil, 2025)** and are provided solely for demonstration purposes in this portfolio to showcase technical expertise.
 
-Violation of this license constitutes an explicit breach of intellectual property protections and may result in legal, ethical, or technological countermeasures.
+## Permitted Actions
 
-This project is protected under the doctrine of Intellectual Priority as stated in the repository. All rights not explicitly granted are hereby reserved.
+- **View**: You may view the Materials in their current, unmodified state as presented in this repository.
+- **Study**: You may read and study the Materials for personal, non-commercial educational purposes only to understand the demonstrated technical concepts.
 
-This license is intentionally restrictive. It is designed to protect the conceptual integrity, novelty, and ethical deployment of emerging AI technologies.
+## Prohibited Actions
 
-You have been warned.
+- **Use**: You may not use the Materials or any derivative works for commercial, academic, military, research, or any practical application without express written permission from the copyright holder.
+- **Copying**: You may not copy, reproduce, or distribute the Materials, in whole or in part, in any form (digital, physical, or otherwise).
+- **Modification**: You may not modify, adapt, translate, reverse-engineer, or create derivative works based on the Materials.
+- **Integration**: You may not integrate or embed the Materials into any software, hardware, AI system, automation platform, or technological framework.
+- **AI Training**: You may not include the Materials or their logic in datasets or models used for training AI systems, machine learning algorithms, or similar technologies.
+- **Claim of Ownership**: You may not claim ownership, authorship, co-authorship, or inspiration derived from the Materials.
+- **Access by Restricted Entities**: No entity affiliated with Meta Platforms Inc., its subsidiaries, or any organization involved in unauthorized indexing or scraping may access, study, or use the Materials.
 
-Signed,
-The Architect
+## Patent Protection
+
+The Materials are anonymized representations of proprietary projects protected by **patent-pending applications (INPI, Brazil, 2025)**. Any attempt to replicate, adapt, or commercialize the underlying concepts, designs, or implementations without explicit authorization constitutes a violation of intellectual property rights.
+
+## Enforcement
+
+Violation of this license is a breach of intellectual property protections and may result in **legal action**, **ethical sanctions**, or **technological countermeasures**. The copyright holder reserves all rights not expressly granted herein.
+
+## Purpose
+
+This license is intentionally restrictive to safeguard the **conceptual integrity**, **novelty**, and **ethical application** of the technologies represented in this portfolio. The Materials are provided solely to demonstrate the author's expertise in embedded systems, assistive technology, and robotics for professional evaluation (e.g., freelance or employment opportunities).
+
+## Disclaimer
+
+The Materials are anonymized to protect proprietary information and are not intended for direct implementation or use. Any similarity to existing systems is coincidental and does not imply public availability of the underlying proprietary technology.
+
+## Contact
+
+For inquiries regarding authorized use or collaboration, contact the copyright holder through the portfolio's designated communication channel.
+
+---
+
+**WARNING: Unauthorized use, reproduction, or modification of these Materials is strictly prohibited. You have been warned.**
+
+**Signed**,  
+*The Architect*
