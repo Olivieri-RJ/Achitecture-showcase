@@ -64,7 +64,7 @@ No functionality, project, or proprietary domain is disclosed.
 #### 🧠 Abstracted Logic Flow
 ────────────────────
 
-![Descrição da imagem](assets/20250805_133007.png)
+![Descrição da imagem](assets/20250805_133007.png
 
 
 
@@ -1324,15 +1324,15 @@ Below are abstracted structural schematics extracted from the project’s archit
 
 Modular interaction
 
-![Descrição da imagem](assets/file_00000000866461f7b62395ecefe7f8d0.png)
+![Descrição da imagem](assets/file_00000000866461f7b62395ecefe7f8d0.png
 
 Permission tree 
 
-![Descrição da imagem](assets/file_00000000da5861f88216dab9e451afbd.png)
+![Descrição da imagem](assets/file_00000000da5861f88216dab9e451afbd.png
 
 logicDecision-making flow
 
-![Descrição da imagem](assets/file_0000000091ac61f893fb18281f03325f.png)
+![Descrição da imagem](assets/file_00000091ac61f893fb18281f03325f.pg
 
 
 
