@@ -1,179 +1,209 @@
 ```python
 import time
-import ujson
-from machine import Pin, SPI, ADC, I2C, UART
-import neopixel
+import random
+import json
 import pygame
+import sqlite3
 from typing import Dict, List, Optional
 
 # Simulated hardware dependencies
-DEPENDENCIES = {'emg_sensor': False, 'eye_tracker': False, 'pressure_sensor': True}
+DEPENDENCIES = {'ble': False, 'imu': False, 'display': True}
 
-# Logging utility
-def log_event(event_type: str, value: str):
-    """Logs events to a file and sends via communication interfaces."""
-    log = f"{time.time()},{event_type},{value}\n"
-    with open("events.txt", "a") as f:
-        f.write(log)
-    print(f"Logged: {event_type} - {value}")
-
-class SensorInterface:
-    """Base class for sensor reading and calibration."""
-    
-    def __init__(self, pin: int, sensor_type: str):
-        self.pin = Pin(pin, Pin.IN)
-        self.sensor_type = sensor_type
-        self.active = True
-
-    def read(self) -> Optional[float]:
-        """Placeholder for sensor reading."""
-        return None
-
-class EMGReader(SensorInterface):
-    """Handles EMG sensor data reading."""
-    
-    def __init__(self, spi: SPI, cs_pin: int, drdy_pin: int):
-        super().__init__(cs_pin, "emg")
-        self.spi = spi
-        self.cs = Pin(cs_pin, Pin.OUT)
-        self.drdy = Pin(drdy_pin, Pin.IN)
-        self.sample_rate = 250
-
-    def set_sample_rate(self, hz: int):
-        """Sets the sampling rate for EMG data."""
-        self.sample_rate = hz
-        print(f"EMG sample rate set to {hz} Hz")
-
-    def read(self) -> List[float]:
-        """Reads 4-channel EMG data (simulated)."""
-        if self.active:
-            return [random.uniform(0, 1) for _ in range(4)]  # Simulated data
-        return [0.0] * 4
+# Logging setup
+def initialize_db():
+    conn = sqlite3.connect("user_data.db")
+    c = conn.cursor()
+    c.execute("""CREATE TABLE IF NOT EXISTS logs (
+        user TEXT,
+        module TEXT,
+        attempts INTEGER,
+        successes INTEGER,
+        avg_time REAL,
+        timestamp REAL
+    )""")
+    conn.commit()
+    conn.close()
 
 class FeedbackController:
-    """Manages visual, auditory, and communication feedback."""
+    """Manages tactile, visual, and auditory feedback."""
     
     def __init__(self, config: Dict[str, any]):
         self.config = config
-        self.led = neopixel.NeoPixel(Pin(21), 1)
-        self.uart = UART(1, baudrate=9600, tx=Pin(3), rx=Pin(2))
         self.silent_mode = False
         pygame.mixer.init()
 
-    def flash_led(self, color: str, duration_ms: int = 200):
-        """Flashes an LED with specified color."""
+    def play_sound(self, sound_file: str, volume: float = 0.5):
+        """Plays an alert sound with volume control."""
         if not self.silent_mode:
-            colors = {"green": (0, 255, 0), "red": (255, 0, 0), "yellow": (255, 255, 0)}
-            self.led[0] = colors.get(color, (0, 0, 0))
-            self.led.write()
-            time.sleep_ms(duration_ms)
-            self.led[0] = (0, 0, 0)
-            self.led.write()
+            max_volume = self.config.get("max_volume", 60) / 100
+            pygame.mixer.music.load(sound_file)
+            pygame.mixer.music.set_volume(min(volume, max_volume))
+            pygame.mixer.music.play()
 
-    def play_sound(self, index: int):
-        """Plays an audio alert via UART (simulated)."""
+    def trigger_vibration(self, duration_ms: int = 100):
+        """Triggers vibration feedback."""
         if not self.silent_mode:
-            cmd = b'\x7E\xFF\x06\x03\x00\x00' + bytes([index]) + b'\xEF'
-            self.uart.write(cmd)
-            print(f"Playing audio index: {index}")
+            intensity = self.config.get("vibration_intensity", 1)
+            print(f"Vibrating at {intensity}mA for {duration_ms}ms")
 
-    def send_command(self, event: str):
-        """Sends command via communication interface (simulated)."""
+    def flash_led(self, color: str = "green", duration_ms: int = 200):
+        """Flashes an LED with specified color and duration."""
         if not self.silent_mode:
-            print(f"Sending command: {event}")
+            print(f"Flashing {color} LED for {duration_ms}ms")
 
-class GestureClassifier:
-    """Classifies gestures using a lightweight ML model."""
+    def show_notification(self, message: str):
+        """Displays a notification message."""
+        print(f"Notification: {message}")
+
+class GameModule:
+    """Base class for interactive game modules."""
     
-    def __init__(self, config: Dict[str, any]):
+    def __init__(self, user_id: str, config: Dict[str, any]):
+        self.user_id = user_id
         self.config = config
-        self.history = []
-        self.vocabulary = config.get("vocabulary", ["YES", "NO", "HELP"])
+        self.feedback = FeedbackController(config)
+        self.session_duration = 30 * 60  # 30-minute session
+        self.attempts = 0
+        self.successes = 0
+        self.response_times = []
 
-    def classify(self, emg_data: List[float], emergency: bool, touch: bool) -> Optional[str]:
-        """Classifies gestures based on sensor inputs."""
-        thresholds = self.config.get("thresholds", {})
-        if emergency:
-            return "HELP"
-        
-        self.history.append(emg_data)
-        if len(self.history) > 10:
-            self.history.pop(0)
-        
-        if len(self.history) == 10:
-            cheek_threshold = thresholds.get("emg_cheek", 0.4)
-            jaw_threshold = thresholds.get("emg_jaw", 0.45)
-            if emg_data[0] > cheek_threshold and emg_data[0] < 1.5 * cheek_threshold:
-                return "YES"
-            if emg_data[2] > jaw_threshold and emg_data[2] < 1.5 * jaw_threshold:
-                return "NO"
-            if touch and thresholds.get("touch_active", True):
-                return "INTERACTIVE"
-        return None
+    def wait_for_input(self, options: List[str], time_limit: float) -> str:
+        """Simulates waiting for user input (placeholder)."""
+        time.sleep(random.uniform(0, time_limit))
+        return random.choice(options)
 
-class AssistiveDevice:
-    """Main system for gesture-based communication."""
+    def log_metrics(self, module_name: str, metrics: Dict[str, any]):
+        """Logs session metrics to SQLite and JSON."""
+        initialize_db()
+        log_entry = {
+            "user": self.user_id,
+            "module": module_name,
+            "attempts": metrics.get("attempts", 0),
+            "successes": metrics.get("successes", 0),
+            "avg_time": metrics.get("avg_time", 0),
+            "timestamp": time.time()
+        }
+        
+        with open(f"{self.user_id}_log.json", "a") as f:
+            json.dump(log_entry, f)
+            f.write("\n")
+        
+        conn = sqlite3.connect("user_data.db")
+        c = conn.cursor()
+        c.execute("""INSERT INTO logs (user, module, attempts, successes, avg_time, timestamp)
+                     VALUES (?, ?, ?, ?, ?, ?)""",
+                  (log_entry["user"], log_entry["module"], log_entry["attempts"],
+                   log_entry["successes"], log_entry["avg_time"], log_entry["timestamp"]))
+        conn.commit()
+        conn.close()
+
+class SoundMatchingGame(GameModule):
+    """Game module for sound-image matching."""
+    
+    def __init__(self, user_id: str, config: Dict[str, any]):
+        super().__init__(user_id, config)
+        self.sounds = {
+            "bark": "dog.png",
+            "meow": "cat.png",
+            "bell": "bell.png"
+        }
+
+    def run(self, level: int = 1) -> bool:
+        """Runs a single game round."""
+        sound = random.choice(list(self.sounds.keys()))
+        if not self.config.get("silent_mode", False):
+            print(f"Playing sound: {sound}")
+            self.feedback.trigger_vibration(100)
+            self.feedback.flash_led("green", 200)
+            self.feedback.play_sound("tone.wav", volume=0.3)
+
+        num_options = 3
+        options = [self.sounds[sound]] + random.sample(
+            [v for k, v in self.sounds.items() if k != sound],
+            min(num_options - 1, len(self.sounds) - 1)
+        )
+        random.shuffle(options)
+
+        start_time = time.time()
+        response = self.wait_for_input(options, 5)
+        response_time = time.time() - start_time
+
+        correct = response == self.sounds[sound]
+        self.attempts += 1
+        if correct:
+            self.successes += 1
+            self.feedback.flash_led("green", 200)
+        else:
+            self.feedback.flash_led("red", 200)
+
+        self.response_times.append(response_time)
+        metrics = {
+            "attempts": 1,
+            "successes": 1 if correct else 0,
+            "avg_time": response_time,
+            "level": level
+        }
+        self.log_metrics("sound_matching", metrics)
+        return correct
+
+class ProgressTracker:
+    """Tracks and reports user progress."""
     
     def __init__(self, user_id: str):
         self.user_id = user_id
-        self.config = {
-            "thresholds": {
-                "emg_cheek": 0.4,
-                "emg_jaw": 0.45,
-                "touch_active": True
-            },
-            "vocabulary": ["YES", "NO", "HELP", "INTERACTIVE"]
-        }
-        self.emg = EMGReader(SPI(1, baudrate=1000000, sck=Pin(18), mosi=Pin(19), miso=Pin(20)), 17, 16)
-        self.feedback = FeedbackController(self.config)
-        self.classifier = GestureClassifier(self.config)
-        self.last_activity = time.time()
 
-    def calibrate(self) -> Dict[str, any]:
-        """Calibrates sensor thresholds."""
-        print("Calibrating sensors...")
-        baseline_emg = []
-        for _ in range(50):
-            baseline_emg.append(self.emg.read())
-            time.sleep(0.1)
+    def generate_report(self, weeks: int = 4) -> None:
+        """Generates a progress report as a PDF."""
+        initialize_db()
+        conn = sqlite3.connect("user_data.db")
+        df = pd.read_sql_query("SELECT * FROM logs WHERE user = ?", conn, params=(self.user_id,))
+        conn.close()
+
+        if df.empty:
+            print(f"No data for User {self.user_id[-4:]}")
+            return
+
+        import matplotlib.pyplot as plt
+        from fpdf import FPDF
         
-        baseline_emg = [sum(ch) / len(baseline_emg) for ch in zip(*baseline_emg)]
-        thresholds = {
-            "emg_cheek": baseline_emg[0] * 1.2,
-            "emg_jaw": baseline_emg[2] * 1.2,
-            "touch_active": True
-        }
-        with open("thresholds.json", "w") as f:
-            ujson.dump(thresholds, f)
-        log_event("calibration", "success")
-        return thresholds
+        df['week'] = pd.to_datetime(df['timestamp'], unit='s').dt.isocalendar().week
+        weekly_avg_time = df.groupby('week')['avg_time'].mean()
+        weekly_successes = df.groupby('week')['successes'].sum()
+        weekly_engagement = df.groupby('week')['attempts'].apply(lambda x: (x > 0).mean())
 
-    def run(self):
-        """Main loop for gesture detection and feedback."""
-        self.config["thresholds"] = self.calibrate()
-        while True:
-            emergency = False  # Simulated emergency check
-            touch = bool(Pin(27, Pin.IN).value())
-            emg_data = self.emg.read()
-            gesture = self.classifier.classify(emg_data, emergency, touch)
-            
-            if gesture:
-                self.feedback.flash_led("green" if gesture != "HELP" else "yellow")
-                self.feedback.play_sound(self.config["vocabulary"].index(gesture) + 1)
-                self.feedback.send_command(gesture)
-                log_event("gesture", gesture)
-                self.last_activity = time.time()
-            
-            if time.time() - self.last_activity > 15:
-                self.emg.set_sample_rate(250)
-                log_event("power", "sleep_mode")
-                time.sleep(0.5)
-            else:
-                self.emg.set_sample_rate(1000)
-                time.sleep(0.1)
+        plt.figure(figsize=(6, 4))
+        plt.plot(weekly_avg_time.index[-weeks:], weekly_avg_time.values[-weeks:], 'b-', label='Avg Response Time (s)')
+        plt.plot(weekly_successes.index[-weeks:], weekly_successes.values[-weeks:] / 10, 'r-', label='Successes /10')
+        plt.plot(weekly_engagement.index[-weeks:], weekly_engagement.values[-weeks:], 'g-', label='Engagement')
+        plt.title(f"Weekly Progress (User {self.user_id[-4:]})")
+        plt.xlabel("Week")
+        plt.ylabel("Metrics")
+        plt.legend()
+        plt.savefig("progress.png")
+        plt.close()
+
+        pdf = FPDF()
+        pdf.add_page()
+        pdf.set_font("Arial", size=12)
+        pdf.cell(0, 10, f"Progress Report for User {self.user_id[-4:]}", ln=True, align="C")
+        status = "😊" if weekly_avg_time.iloc[-1] < 3 and weekly_successes.iloc[-1] > 0.8 * df['attempts'].sum() else "😢"
+        pdf.cell(0, 10, f"Status: {status}", ln=True, align="C")
+        pdf.image("progress.png", x=10, y=20, w=180)
+        pdf.output(f"report_{self.user_id}.pdf")
+        if os.path.exists("progress.png"):
+            os.remove("progress.png")
 
 # Example usage
 if __name__ == "__main__":
-    device = AssistiveDevice(user_id="user123")
-    device.run()
+    config = {
+        "max_volume": 60,
+        "vibration_intensity": 1,
+        "silent_mode": False
+    }
+    game = SoundMatchingGame(user_id="user123", config=config)
+    result = game.run(level=1)
+    print(f"Game result: {'Success' if result else 'Failure'}")
+    
+    tracker = ProgressTracker(user_id="user123")
+    tracker.generate_report(weeks=4)
 ```
