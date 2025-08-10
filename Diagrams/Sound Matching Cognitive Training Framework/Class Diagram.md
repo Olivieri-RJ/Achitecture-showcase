@@ -33,7 +33,15 @@ classDiagram
 
     GameModule <|-- SoundMatchingGame : inherits
     GameModule o--> FeedbackController : uses
-    SoundMatchingGame --> ProgressTracker : reports to
-    FeedbackController --> "External Hardware" : controls (LED, Vibration, Audio)
-    ProgressTracker --> "External Storage" : logs to (SQLite, JSON)
+    SoundMatchingGame --> ProgressTracker : reports_to
+    FeedbackController --> ExternalHardware : controls_LED_Vibration_Audio
+    ProgressTracker --> ExternalStorage : logs_to_SQLite_JSON
+
+    class ExternalHardware {
+        <<interface>>
+    }
+
+    class ExternalStorage {
+        <<interface>>
+    }
 ```
