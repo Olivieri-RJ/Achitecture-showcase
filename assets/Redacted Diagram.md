@@ -1,4 +1,4 @@
-```marmeid
+```mermaid
 classDiagram
     class ContentValidationSystem {
         -str mode
