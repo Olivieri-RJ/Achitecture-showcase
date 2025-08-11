@@ -10,6 +10,91 @@ A modular Python framework for building cognitive training and sensory associati
 ---
 
 ## Architecture
+
+### Class Diagram
+```mermaid
+classDiagram
+    class FeedbackController {
+        -Dict config
+        -bool silent_mode
+        +play_sound(sound_file, volume)
+        +trigger_vibration(duration_ms)
+        +flash_led(color, duration_ms)
+        +show_notification(message)
+    }
+
+    class GameModule {
+        -str user_id
+        -Dict config
+        -FeedbackController feedback
+        -int session_duration
+        -int attempts
+        -int successes
+        -List[float] response_times
+        +wait_for_input(options, time_limit) str
+        +log_metrics(module_name, metrics)
+    }
+
+    class SoundMatchingGame {
+        -Dict sounds
+        +run(level) bool
+    }
+
+    class ProgressTracker {
+        -str user_id
+        +generate_report(weeks)
+    }
+
+    GameModule <|-- SoundMatchingGame : inherits
+    GameModule o--> FeedbackController : uses
+    SoundMatchingGame --> ProgressTracker : reports_to
+    FeedbackController --> ExternalHardware : controls_LED_Vibration_Audio
+    ProgressTracker --> ExternalStorage : logs_to_SQLite_JSON
+
+    class ExternalHardware {
+        <<interface>>
+    }
+
+    class ExternalStorage {
+        <<interface>>
+    }
+```
+
+### Sequence Diagram
+```mermaid
+sequenceDiagram
+    participant User
+    participant System as SoundMatchingGame
+    participant Feedback as FeedbackController
+    participant Storage as SQLite/JSON
+    participant Tracker as ProgressTracker
+
+    User->>System: Start game round
+    System->>Feedback: Play sound (e.g., "bark")
+    Feedback->>External Hardware: Trigger audio (tone.wav)
+    System->>Feedback: Trigger vibration (100ms)
+    Feedback->>External Hardware: Activate vibration
+    System->>Feedback: Flash LED (green, 200ms)
+    Feedback->>External Hardware: Flash green LED
+    System->>User: Present options (e.g., dog.png, cat.png)
+    User->>System: Select option
+    System->>System: Check response correctness
+    alt Response is correct
+        System->>Feedback: Flash LED (green, 200ms)
+        Feedback->>External Hardware: Flash green LED
+    else Response is incorrect
+        System->>Feedback: Flash LED (red, 200ms)
+        Feedback->>External Hardware: Flash red LED
+    end
+    System->>Storage: Log metrics (attempts, successes, time)
+    Storage-->>System: Confirm log saved
+    System->>Tracker: Generate report (optional)
+    Tracker->>Storage: Query logs for user
+    Storage-->>Tracker: Return log data
+    Tracker->>External Storage: Save PDF report
+    System-->>User: Return result
+```
+
 - **HardwareInterface**
   - Unified control of audio, vibration, and LED feedback.
 - **GameModule**
