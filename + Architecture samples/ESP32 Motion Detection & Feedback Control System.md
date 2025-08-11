@@ -10,6 +10,78 @@ This firmware demonstrates a motion classification and feedback control system r
 ---
 
 ## Architecture
+
+### Class Diagram
+```mermaid
+classDiagram
+    class SystemController {
+        +imu_init()
+        +app_main()
+    }
+    class IMU {
+        +accel[3]
+        +gyro[3]
+        +magnitude
+        +imu_init()
+        +imu_read(imu_data_t*)
+    }
+    class Servo {
+        +id
+        +last_error
+        +integral
+        +pid_adjust_servo(actual_tilt, setpoint, Servo*)
+    }
+    class MotionClassifier {
+        +classify_motion(imu_data_t*) motion_event_t
+    }
+    class HapticFeedback {
+        +trigger_haptic(freq, amplitude)
+    }
+    class Logger {
+        +log_event(type, value)
+    }
+
+    SystemController --> IMU : initializes and reads
+    SystemController --> Servo : controls via PID
+    SystemController --> MotionClassifier : classifies motion
+    SystemController --> HapticFeedback : triggers stimuli
+    SystemController --> Logger : logs events
+    MotionClassifier --> HapticFeedback : triggers on freeze
+    MotionClassifier --> Logger : logs motion events
+```
+
+### Sequence Diagram
+```mermaid
+sequenceDiagram
+    participant SC as SystemController
+    participant IMU as IMU
+    participant MC as MotionClassifier
+    participant S as Servo
+    participant HF as HapticFeedback
+    participant L as Logger
+
+    SC->>IMU: imu_init()
+    IMU-->>SC: Initialized
+    loop Every 50ms
+        SC->>IMU: imu_read(&imu_data)
+        IMU-->>SC: imu_data
+        SC->>MC: classify_motion(&imu_data)
+        alt MOTION_FREEZE
+            MC->>HF: trigger_haptic(100, 1.5)
+            HF-->>MC: Haptic activated
+            MC->>L: log_event("stimulus", "freeze_breaker_activated")
+        else MOTION_FALL
+            MC->>L: log_event("emergency", "fall_detected")
+            MC->>SC: Activate fail-safe
+        else MOTION_TILT_LEFT or MOTION_TILT_RIGHT
+            MC-->>SC: Motion event
+        end
+        SC->>S: pid_adjust_servo(current_tilt, 0.0, &torso_servo)
+        S-->>SC: PWM adjusted
+        SC->>L: log_event("servo", "PWM adjusted")
+    end
+```
+
 1. **IMU Driver Layer**
    - Initializes and reads accelerometer and gyroscope data.
    - Calculates magnitude and roll for motion classification.
